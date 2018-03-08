@@ -15,7 +15,7 @@ dataset = pd.read_csv('Churn_Modelling.csv')
 X = dataset.iloc[:, 3:-1].values
 y = dataset.iloc[:, -1].values
 
-#训练数据和测试数据的分离
+#对非数字的分类数据进行处理
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 labelencoder_X_1 = LabelEncoder()
 X[:, 1] = labelencoder_X_1.fit_transform(X[:, 1])
